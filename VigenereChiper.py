@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Implementasi Vigenere Chiper
+"""Implementasi Vigenere Chiper Standar
 
 ENKRIPSI
 *   Apabila kunci tidak sepanjang plaintext, maka kunci akan di loop menyesuaikan kunci yang dimasukkan. 
