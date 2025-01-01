@@ -2,7 +2,6 @@
 """
 Caesar Cipher Implementation
 Author: Johana Oktavia Ramadhani
-NIM: A11.2023.15024
 
 Tugas : Membuat kode enkripsi atau dekripsi menggunakan algoritma Caesar-Chiper dengan bahasa java/Phyton
 
