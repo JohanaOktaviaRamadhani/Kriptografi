@@ -18,6 +18,7 @@ def left_rotate(bits):
     return bits[1:] + bits[0]
 
 def xor(bits1, bits2):
+    #Melakukan operasi XOR pada dua string biner dengan panjang yang sama.
     return ''.join('1' if b1 != b2 else '0' for b1, b2 in zip(bits1, bits2))
 
 def encrypt_cbc(plaintext, iv, key):
@@ -42,26 +43,10 @@ def encrypt_cbc(plaintext, iv, key):
 
     return ciphertext_blocks
 
-# Input dinamis dengan validasi
-def get_binary_input(prompt, expected_length=None):
-    """
-    Meminta input biner dari pengguna dengan validasi.
-    """
-    while True:
-        user_input = input(prompt).strip()
-        if all(char in '01' for char in user_input):
-            if expected_length and len(user_input) != expected_length:
-                print(f"Input harus memiliki panjang {expected_length} bit.")
-            else:
-                return user_input
-        else:
-            print("Input harus berupa string biner (hanya terdiri dari '0' dan '1').")
-
-# Main program
-print("=== Enkripsi CBC Standar dengan Blok 4-bit ===")
-key = get_binary_input("Masukkan key (biner): ")
-iv = get_binary_input("Masukkan IV (biner, panjang sesuai kunci): ", expected_length=len(key))
-plaintext = get_binary_input("Masukkan plaintext (biner): ")
+# Input dinamis
+plaintext = input("Masukkan plaintext (biner): ")
+iv = input("Masukkan IV (biner, panjang sesuai kunci): ")
+key = input("Masukkan key (biner): ")
 
 # Pastikan panjang plaintext adalah kelipatan panjang kunci (padding dengan '0' jika perlu)
 block_size = len(key)
